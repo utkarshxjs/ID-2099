@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID-2099</title>
+    <link rel="shortcut icon" href="logo-ID-2099.png" type="image/x-icon">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header">
+        <div class="badge">🌌 Parallel Universe Generator</div>
+        <h1>Who are you in<br />another universe?</h1>
+        <p>
+          Type your name and find out your alternate identity — job, planet,
+          superpower and more.
+        </p>
+      </div>
+
+      <div class="input-box">
+        <label>YOUR NAME</label>
+        <div class="input-row">
+          <input
+            type="text"
+            id="name-input"
+            placeholder="e.g. Alex, Sarah, João..."
+            maxlength="40"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button class="go-btn" id="go-btn" onclick="generate()">
+            ✨ Generate
+          </button>
+        </div>
+      </div>
+
+      <div id="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">
+          Scanning universes for <span id="loading-name"></span>...
+        </div>
+      </div>
+
+      <div id="card-wrap">
+        <div id="id-card">
+          <div class="holo" id="holo"></div>
+          <div class="deco-planet"></div>
+          <div class="deco-ring"></div>
+
+          <div class="card-top">
+            <div class="card-universe">
+              Parallel Universe<br /><strong id="c-universe">—</strong>
+            </div>
+            <div class="threat-pill" id="c-threat-pill">—</div>
+          </div>
+
+          <div class="card-mid">
+            <div class="avatar-ring">
+              <img id="c-avatar" src="" alt="avatar" />
+            </div>
+            <div>
+              <div class="card-name" id="c-name">—</div>
+              <div class="card-job" id="c-job">—</div>
+              <div class="card-uid" id="c-uid">—</div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="s-label">🌍 Home Planet</div>
+              <div class="s-val purple" id="c-planet">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">🧬 Made of</div>
+              <div class="s-val teal" id="c-bio">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">⚡ Superpower</div>
+              <div class="s-val yellow" id="c-power">—</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">🚀 Side Hobby</div>
+              <div class="s-val pink" id="c-hobby">—</div>
+            </div>
+          </div>
+
+          <div class="fun-fact" id="c-fact">—</div>
+
+          <div class="card-footer-row">
+            <div class="issued-label">
+              Issued by the Multiverse Authority<br />Valid across all
+              dimensions
+            </div>
+            <div class="stars-row" id="c-stars"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="action-btn btn-primary" onclick="downloadCard(this)">
+            ⬇️ Save as Image
+          </button>
+          <button class="action-btn btn-secondary" onclick="reset()">
+            🔄 Try Another Name
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
